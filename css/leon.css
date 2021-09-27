@@ -1,0 +1,433 @@
+/*  Start Variables */
+:root{
+    --main-color:#10cab7;
+    --secondry-color:#2c4755;
+    --section-padding:60px;
+    --section-background:#f6f6f6;
+    --font-color-paragraph: #777;
+    --margin-content-heading:100px;
+    --main-transition:0.3s;
+}
+/* End Variables  */
+/* Start Global Rules */
+*{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    font-family: 'Work Sans', sans-serif;
+}
+.container{
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* Responsive Design */
+/* Small */
+@media (min-width:768px) {
+    .container{
+        width: 750px;
+    }   
+}
+/* Medium */
+@media (min-width:992px) {
+    .container{
+        width: 970px;
+    }
+}
+/* Large */
+@media (min-width:1200px) {
+    .container{
+        width: 1170px;
+    }
+}
+/* End Global Rules */
+/* Start Components  */
+.special-heading{
+    color: #ebeced;
+    font-size: 100px;
+    text-align: center;
+    font-weight: 800;
+    letter-spacing: -3px;
+    margin: 0;
+}
+.grid-3{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(300px, 1fr));
+    grid-gap:30px;
+}
+.special-heading + p{
+    margin: -30px 0 0;
+    font-size: 20px;
+    text-align: center;
+    color: #797979;
+}
+@media(max-width:767px){
+    .special-heading{
+        font-size: 60px;
+    }
+    .special-heading + p{
+        margin-top: -20px;
+    }
+}
+/* End Components */
+/* Start Header */
+.header{
+    padding: 20px;
+}
+.header .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header .logo{
+    width: 2.5%;
+    height: 2.5%;
+}
+.header .links{
+    position: relative;
+}
+.header .links .icon:hover span:nth-child(2){
+    width: 100%;
+}
+.header .links .icon{
+    width: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+.header .links .icon span{
+    background-color: #333;
+    margin-bottom: 5px;
+    height: 2px;
+}
+.header .links .icon span:first-child{
+    width: 100%;
+}
+.header .links .icon span:nth-child(2){
+width:60%;
+transition: var(--main-transition);
+}
+.header .links .icon span:nth-child(3){
+width:100%;
+}
+.header .links ul
+{
+list-style: none;
+margin: 0;
+padding: 0;
+background-color: var(--section-background);
+position: absolute;
+right: 0;
+min-width: 200px;
+top: calc(100% + 15px);
+ display: none; 
+}
+.header .links ul::before
+{
+    content: "";
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent var(--section-background) transparent;
+    position: absolute;
+    right: 5px;
+    top: -20px;
+}
+.header .links:hover ul {
+display: block;
+z-index: 1;
+} 
+.header .links ul li a{
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+    color: #333;
+    transition: var(--main-transition);
+}
+.header .links ul li a:hover{
+    padding-left: 25px;
+}
+.header .links ul li:not(:last-child) a {
+    border-bottom: 1px solid #ddd;
+}
+/* End Header */
+/* Start Landing Section  */
+.landing{
+    background-image: url(../images/Calgary-Alberta_Landing-Page.png);
+    background-size: cover;
+    height: calc(100vh - 64px);
+    position: relative;  /* to center the text in the midle */
+}
+.landing .intro-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+.landing .intro-text h1{
+    margin: 0;
+    font-weight: bold;
+    color: var(--main-color);
+    font-size: 60px;
+}
+.landing .intro-text p{
+    font-size: 16px;
+    line-height: 1.8;
+    color:#aaa;
+    width: 320px;
+    max-width:100%;
+}
+/* End Landing Section  */
+/* Start Features Section */
+.features{
+   padding-top:var(--section-padding);
+   padding-bottom: var(--section-padding);
+   background-color: var(--section-background); 
+}
+.features .container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+    grid-gap:20px;
+}
+.features .feat{
+    padding: 20px;
+    text-align: center;
+}
+.features .feat i{
+    color: var(--main-color);
+}
+.features .feat h3{
+font-weight: 800;
+margin: 30px 0;
+}
+.features .feat p{
+line-height: 1.6;
+color: var(--font-color-paragraph);
+font-size:17p
+}
+/*ُ End Features Section */
+/* Start Services Section  */
+.services{
+    padding-top: var(--section-padding);
+    padding-bottom:var(--section-padding) ;
+}
+.services .services-content{
+    margin-top: 90px;
+}
+.services .services-content .srv{
+    display: flex;
+    margin-bottom: 40px;
+}
+@media (max-width:767px){
+    .services .services-content .srv{
+        flex-direction: column;
+        text-align: center;
+    }
+}
+.services .services-content .srv i {
+    color: var(--main-color);
+    flex-basis: 60px;
+}
+.services .services-content .srv .text {
+    flex: 1;
+}
+.services .services-content .srv .text h3{
+    margin: 0 0 20px;
+}
+.services .services-content .srv .text p{
+color: var(--font-color-paragraph);
+font-weight: 300;
+line-height: 1.6;
+}
+.services .services-content .image{
+    text-align: center;
+    position: relative;
+}
+.services .services-content .image::before{
+    content: '';
+    background-color: var(--secondry-color);
+    width: 80px;
+    height: calc(100% + 50px);
+    position: absolute;
+    right: -5px;
+    top: -25px;
+    z-index: -1;
+}
+.services .services-content .image img {
+    width: 300px;
+    height: 300px;
+}
+@media(max-width:1199px) {
+ .services .services-content .image.image-column{
+    display: none ;
+}   
+}
+
+/* End Services Section  */
+/* Start Portfoilo Section */
+.portfoilo{
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+    background-color: var(--section-background);
+}
+.portfoilo .portfoilo-content{
+    padding-top: 80px;
+}
+.portfoilo .portfoilo-content .card{
+    background-color: white;
+}
+.portfoilo .portfoilo-content .card img{
+    width: 100%;
+}
+.portfoilo .portfoilo-content .card .info{
+    padding:20px;
+    text-align: center;
+}
+.portfoilo .portfoilo-content .col .card h3{
+     margin: 0; /*so I let the padding control the space */
+}
+.portfoilo .portfoilo-content .col .card p{
+    color: var(--font-color-paragraph);
+    font-weight: 300;
+    line-height: 1.6;
+    margin: 0px;
+}
+/* End Portfoilo Section */
+/* Start About Section */
+.about{
+    padding-top: var(--section-padding);
+    padding-bottom: calc( var(--section-padding) + 60px);
+}
+.about .about-content {
+    margin-top:var(--margin-content-heading); /* to separate the content from the heading*/
+    display: flex;
+    flex-wrap: wrap; /* if the size of the content increases, the content will wrap tp the next line*/
+    justify-content: space-between; /*to make space between items*/
+}
+@media (max-width:991px) {
+    .about .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+.about .about-content .image {
+    position: relative; /* bcz inner elements will depend on this div, so the dad element should have position relative*/
+    width: 300px; /* The dimensions are same as the picture */
+    height:300px;
+}
+@media (max-width:991px){
+    .about .about-content .image{
+        margin:0 auto 80px;
+    }      
+}
+.about .about-content .image::after{
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 200px;
+    border-left: 80px solid var(--main-color);
+    border-bottom: 80px solid var(--main-color);
+    right: -130px;
+    top: -40px;
+    z-index: -1;
+    }
+.about .about-content .image::before{
+    content: "";
+    background-color: #ebeced;
+    position: absolute;
+    width: 80px;
+    height: calc(100% + 80px);
+    top: -40px;
+    left: -20px;
+    z-index:-1;
+}
+@media (max-width:991px) {
+    .about .about-content .image::before,
+    .about .about-content .image::after{
+        display: none;
+    }   
+}
+.about .about-content .image img{
+    max-width: 100%;
+}
+.about .about-content .info{
+    flex-basis: calc(100% - 500px);  /* to make the text on the same first line*/
+}
+.about .about-content .info p:first-of-type{
+font-weight: bold;
+line-height: 2;
+margin-bottom: 50px;
+}
+.about .about-content .info hr{
+width: 50%;
+display: inline-block;
+border-color: var(--main-color);
+}
+.about .about-content .info p:last-of-type  {
+line-height: 2;
+color: #777;
+}
+/* End About Section */
+/* Start Contact Section */
+.contact{
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+    background-color: var(--section-background);
+}
+.contact .contact-content {
+    margin-top: var(--margin-content-heading);
+}
+.contact .contact-content .text{
+    position: relative;
+    text-align: center;
+}
+.contact .contact-content .text .label{
+    color: var(--secondry-color);
+    font-size: 35px;
+    font-weight: 800;
+    letter-spacing: -2px;
+    margin-bottom: 15px;    
+} 
+.contact .contact-content .text .link{
+    display: block;
+    color:var(--main-color);
+    font-size: 35px;
+    font-weight: 800;
+    text-decoration: none; /*so no underline*/
+}
+.contact .text .social{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    font-size: 16px;
+}
+.contact .text .social i{
+    margin: 18px 8px;
+    color: var(--secondry-color);
+}
+@media (max-width: 767px) {
+    .contact .contact-content .text .label,
+    .contact .contact-content .text .link{
+    font-size: 25px;
+    }
+}
+/* End Contact Section  */  
+/* Start Footer Section  */
+.footer{
+    background-color: var(--secondry-color);
+    text-align: center;
+    color:white;
+    padding: 20px 10px;
+    font-size: 17px;
+}
+.footer span{
+    font-weight: bold;
+    color: var(--main-color);
+}
+/* End Footer Section */
